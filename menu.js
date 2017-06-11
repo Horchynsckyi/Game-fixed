@@ -22,6 +22,7 @@ startWithCheckPoint.x = screenWidth / 2 - OOP.getTextWidth(startWithCheckPoint) 
         startWithCheckPoint.draw();
     };
     this.update = function() {
+        log(1);
         playAudioFoneFunc();
         //Запускаем новую игру
         if(mouse.isPeekObject('LEFT', startNew) || (touch.isDown() && touch.isInObject(startNew))){
