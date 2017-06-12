@@ -1,6 +1,6 @@
 function Menu() {
 mouse.initMouseControl();
-playAudioFoneFunc();
+//playAudioFoneFunc();
 //Объекты меню
 var startNew = game.newTextObject({
     text: 'Начать новую игру',
