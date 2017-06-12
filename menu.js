@@ -28,7 +28,7 @@ startWithCheckPoint.x = screenWidth / 2 - OOP.getTextWidth(startWithCheckPoint) 
         //Запускаем новую игру
         if(mouse.isPeekObject('LEFT', startNew) || (touch.isDown() && touch.isInObject(startNew))){
             levelNumber = 1;
-            game.startLoop('Level1');
+            game.startLoop('fix');
         }
         //Если игрок сохранялся разрешаем исользование загрузки
         if(checkPoint.checkPointBeeSave) startWithCheckPoint.color = 'green';

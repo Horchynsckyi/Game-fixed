@@ -1,3 +1,16 @@
+game.newLoopFromConstructor('fix', function(){  
+var fix = game.newTextObject({
+    text: 'fix',
+    size: 30,
+    color: '#ffffff',
+    positionC: camera.getPositionC(100, 0),
+});
+    this.update = function() {
+        game.clear();
+    fix.draw();
+}
+});
+
 game.newLoopFromConstructor('Level1', function(){  
 backGorund = setBackGroundFunc();
 this.entry = function() {
