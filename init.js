@@ -1,3 +1,4 @@
+'use strict';
 var pjs = new PointJS('2D', 1000, 200);
 pjs.system.initFullPage();
 //

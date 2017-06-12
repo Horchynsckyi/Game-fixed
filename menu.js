@@ -1,3 +1,4 @@
+'use strict';
 function Menu() {
 mouse.initMouseControl();
 foneMusick.play();

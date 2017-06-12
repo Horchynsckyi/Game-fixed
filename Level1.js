@@ -1,3 +1,4 @@
+'use strict';
 game.newLoopFromConstructor('fix', function(){  
     this.update = function() {
     //Отрисовка

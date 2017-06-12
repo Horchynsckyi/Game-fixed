@@ -1,4 +1,4 @@
-
+'use strict';
 ////Задаём задний фон
 function setBackGroundFunc(){
 var backGround = [];
