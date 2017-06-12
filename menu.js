@@ -1,5 +1,7 @@
 function Menu() {
 mouse.initMouseControl();
+foneMusick.play();
+foneForestSong.play();
 //playAudioFoneFunc();
 //Объекты меню
 var startNew = game.newTextObject({
