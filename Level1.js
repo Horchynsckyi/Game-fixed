@@ -1,19 +1,69 @@
 game.newLoopFromConstructor('fix', function(){  
-var fix = game.newTextObject({
-    text: 'fix',
-    size: 30,
-    color: '#ffffff',
-    positionC: camera.getPositionC(100, 0),
-});
     this.update = function() {
-        game.clear();
-    fix.draw();
+    //Отрисовка
+    game.clear();
+    camera.setPositionC(point(player.getPositionC().x, player.getPositionC().y));
+    player.draw();
+    OOP.drawArr(backGorund);
+    OOP.drawArr(backGroundDecoration);
+    OOP.drawArr(ground);
+    OOP.drawArr(decorations);
+    OOP.drawArr(ladders);
+    //контроль
+    if(key.isPress('F1') || (touch.isDown() && touch.isInObject(quickSave))) {
+        checkPoint.playerSavedCheckPoint = true;
+        saveCheckPointFunc();
+    }
+    //
+    if((key.isDown('D') || key.isDown('RIGHT')) || (touch.isDown() && touch.isInObject(goRight)) && player.hide == false) {
+    player.setFlip(0, 0);
+    player.see = 60;
+    playerMove.setFlip(0, 0);
+        if((key.isDown('SHIFT') || (touch.isDown() && touch.isInObject(doIt))) && player.energy > 0) {
+            player.speedX = 1.5;
+            player.energy -= 1;
+        } else player.speedX = 1;
+    } else if((key.isDown('A') || key.isDown('LEFT') || (touch.isDown() && touch.isInObject(goLeft)) && player.hide == false)) {
+    player.setFlip(1, 0);
+    player.see = -60;
+    playerMove.setFlip(1, 0);
+        if((key.isDown('SHIFT') || (touch.isDown() && touch.isInObject(doIt))) && player.energy > 0) {
+            player.speedX = -1.5;
+            player.energy -= 1;
+        } else player.speedX = -1;
+    } else {
+        player.speedX = 0;
+    }
+    //тачпад
+    goLeft.setPositionCS(point (100, screenHeight - 100));
+    goRight.setPositionCS(point (200, screenHeight - 100));
+    goDown.setPositionCS(point (300, screenHeight - 100));
+    jumpAndUp.setPositionCS(point (screenWidth - 200, screenHeight - 100));
+    doIt.setPositionCS(point (screenWidth - 100, screenHeight - 100));
+    quickSave.setPositionCS(point (screenWidth - 100, 50));
+    goRight.draw();
+    goLeft.draw();
+    jumpAndUp.draw();
+    goDown.draw();
+    doIt.draw();
+    quickSave.draw();
+    //
 }
 });
 
 game.newLoopFromConstructor('Level1', function(){  
+try{
+    playAudioFoneFunc();
+}catch(e) {
+    alert(e);
+}
 backGorund = setBackGroundFunc();
 this.entry = function() {
+    try{
+    playAudioFoneFunc();
+    }catch(e) {
+        alert(e);
+    }
     if(gameInPouse == false) {
     clearAllVarsFunc();
     setLevelFunc();

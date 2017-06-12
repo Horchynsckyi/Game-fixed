@@ -44,17 +44,17 @@ for(x = 0; x<15; x++){
 };
 return backGround;
 }
-//function playAudioFoneFunc() {
-//    foneMusick.play();
-//    foneForestSong.play();
-//    setInterval(function() {
-//    //Аудио проигрывается опять через определенное время
-//    foneMusick.replay();
-//    }, 68 * 1000);
-//    setInterval(function() {
-//        foneForestSong.replay();
-//    }, 600 * 1000);
-//}
+function playAudioFoneFunc() {
+    foneMusick.play();
+    foneForestSong.play();
+    setInterval(function() {
+    //Аудио проигрывается опять через определенное время
+    foneMusick.replay();
+    }, 68 * 1000);
+    setInterval(function() {
+        foneForestSong.replay();
+    }, 600 * 1000);
+}
 //
 //Назначаем игру его позицыю в зависмости от уровня
 //

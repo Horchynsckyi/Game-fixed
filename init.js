@@ -12,7 +12,6 @@ var log = pjs.system.log,
 pjs.system.setTitle('Dark forest');
 game.setFPS(60);
 //
-pjs.system.setSettings({isStopForError : false});
 var mouse = pjs.mouseControl.initMouseControl(),
     key = pjs.keyControl.initKeyControl(),
     touch = pjs.touchControl.initTouchControl();
@@ -21,9 +20,27 @@ var mouse = pjs.mouseControl.initMouseControl(),
 var screenWidth = game.getWH().w,
     screenHeight = game.getWH().h;
 //
-var POINTJS_USER_LOG = function (e) {
-  alert(e);
-}
+	
+pjs.system.setSettings({isStopForError : false});
+window.onerror = function (msg, url, lineNo, columnNo, error) {
+    var string = msg.toLowerCase();
+    var substring = "script error";
+    if (string.indexOf(substring) > -1){
+        alert('Script Error: See Browser Console for Detail');
+    } else {
+        var message = [
+            'Message: ' + msg,
+            'URL: ' + url,
+            'Line: ' + lineNo,
+            'Column: ' + columnNo,
+            'Error object: ' + JSON.stringify(error)
+        ].join(' - ');
+
+        alert(message);
+    }
+
+    return false;
+};
 //Глобальные переменные игры
 var gameInPouse = false,
     gameNewGame = true,
