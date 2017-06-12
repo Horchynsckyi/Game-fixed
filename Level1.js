@@ -16,8 +16,8 @@ backGorund = setBackGroundFunc();
 this.entry = function() {
     if(gameInPouse == false) {
     clearAllVarsFunc();
-//    playAudioFoneFunc();
     setLevelFunc();
+    playAudioFoneFunc();
     }
     StartWithCheckPoint = false;
     gameInPouse = false;

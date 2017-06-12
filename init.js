@@ -12,6 +12,7 @@ var log = pjs.system.log,
 pjs.system.setTitle('Dark forest');
 game.setFPS(60);
 //
+pjs.system.setSettings({isStopForError : false});
 var mouse = pjs.mouseControl.initMouseControl(),
     key = pjs.keyControl.initKeyControl(),
     touch = pjs.touchControl.initTouchControl();
@@ -20,6 +21,9 @@ var mouse = pjs.mouseControl.initMouseControl(),
 var screenWidth = game.getWH().w,
     screenHeight = game.getWH().h;
 //
+var POINTJS_USER_LOG = function (e) {
+  alert(e);
+}
 //Глобальные переменные игры
 var gameInPouse = false,
     gameNewGame = true,
